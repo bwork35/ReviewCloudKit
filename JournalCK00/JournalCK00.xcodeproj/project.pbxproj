@@ -16,6 +16,7 @@
 		93872A5325C683840080ECC2 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872A5225C683840080ECC2 /* EntryDetailViewController.swift */; };
 		93872A5625C6839E0080ECC2 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872A5525C6839E0080ECC2 /* Entry.swift */; };
 		93872A5925C683B70080ECC2 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872A5825C683B70080ECC2 /* EntryController.swift */; };
+		93872A5F25C750840080ECC2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93872A5E25C750840080ECC2 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		93872A5225C683840080ECC2 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		93872A5525C6839E0080ECC2 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		93872A5825C683B70080ECC2 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		93872A5B25C7507F0080ECC2 /* JournalCK00.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JournalCK00.entitlements; sourceTree = "<group>"; };
+		93872A5E25C750840080ECC2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93872A5F25C750840080ECC2 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +52,7 @@
 			children = (
 				93872A2E25C6821F0080ECC2 /* JournalCK00 */,
 				93872A2D25C6821F0080ECC2 /* Products */,
+				93872A5D25C750840080ECC2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +67,7 @@
 		93872A2E25C6821F0080ECC2 /* JournalCK00 */ = {
 			isa = PBXGroup;
 			children = (
+				93872A5B25C7507F0080ECC2 /* JournalCK00.entitlements */,
 				93872A4925C682660080ECC2 /* Models */,
 				93872A4B25C682700080ECC2 /* Controllers */,
 				93872A4825C682620080ECC2 /* Views */,
@@ -130,6 +136,14 @@
 				93872A5825C683B70080ECC2 /* EntryController.swift */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		93872A5D25C750840080ECC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93872A5E25C750840080ECC2 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JournalCK00/JournalCK00.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYXP9477KA;
 				INFOPLIST_FILE = JournalCK00/Resources/Info.plist;
@@ -373,6 +388,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = JournalCK00/JournalCK00.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYXP9477KA;
 				INFOPLIST_FILE = JournalCK00/Resources/Info.plist;
