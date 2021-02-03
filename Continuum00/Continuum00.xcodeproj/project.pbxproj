@@ -18,6 +18,8 @@
 		93872B0925C8F3690080ECC2 /* AddPostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872B0825C8F3690080ECC2 /* AddPostTableViewController.swift */; };
 		93872B0C25C8F4B20080ECC2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872B0B25C8F4B20080ECC2 /* Post.swift */; };
 		93872B0F25C8F5870080ECC2 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872B0E25C8F5870080ECC2 /* Comment.swift */; };
+		93872B3725CA616C0080ECC2 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872B3625CA616C0080ECC2 /* PostController.swift */; };
+		93872B3A25CA63630080ECC2 /* PostError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872B3925CA63630080ECC2 /* PostError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		93872B0825C8F3690080ECC2 /* AddPostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostTableViewController.swift; sourceTree = "<group>"; };
 		93872B0B25C8F4B20080ECC2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		93872B0E25C8F5870080ECC2 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		93872B3625CA616C0080ECC2 /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		93872B3925CA63630080ECC2 /* PostError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 				93872AFF25C8F11A0080ECC2 /* Controllers */,
 				93872AFE25C8F1150080ECC2 /* Views */,
 				93872AF425C8EF7B0080ECC2 /* Resources */,
+				93872B3C25CA63660080ECC2 /* Helpers */,
 			);
 			path = Continuum00;
 			sourceTree = "<group>";
@@ -137,8 +142,17 @@
 		93872B0125C8F1240080ECC2 /* ModelControllers */ = {
 			isa = PBXGroup;
 			children = (
+				93872B3625CA616C0080ECC2 /* PostController.swift */,
 			);
 			path = ModelControllers;
+			sourceTree = "<group>";
+		};
+		93872B3C25CA63660080ECC2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				93872B3925CA63630080ECC2 /* PostError.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +226,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				93872B0325C8F1590080ECC2 /* PostListTableViewController.swift in Sources */,
+				93872B3A25CA63630080ECC2 /* PostError.swift in Sources */,
+				93872B3725CA616C0080ECC2 /* PostController.swift in Sources */,
 				93872B0925C8F3690080ECC2 /* AddPostTableViewController.swift in Sources */,
 				93872AE025C8EF2E0080ECC2 /* AppDelegate.swift in Sources */,
 				93872B0F25C8F5870080ECC2 /* Comment.swift in Sources */,
