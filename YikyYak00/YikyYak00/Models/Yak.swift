@@ -58,3 +58,9 @@ extension Yak {
         self.init(text: text, author: author, timestamp: timestamp, score: score, recordID: ckRecord.recordID)
     }
 } //End of extension
+
+extension Yak: Equatable {
+    static func == (lhs: Yak, rhs: Yak) -> Bool {
+        lhs.recordID == rhs.recordID
+    }
+} //End of extension

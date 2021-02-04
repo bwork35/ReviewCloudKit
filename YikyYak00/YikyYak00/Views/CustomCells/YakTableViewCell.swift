@@ -22,9 +22,33 @@ class YakTableViewCell: UITableViewCell {
     
     //MARK: - Actions
     @IBAction func upvoteButtonTapped(_ sender: Any) {
+        guard let yak = yak else {return}
+        yak.score += 1
+        YakController.shared.updateYak(yak: yak) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let yak):
+                    self.scoreCountLabel.text = "\(yak.score)"
+                case .failure(let error):
+                    print(error.errorDescription ?? "Whoops")
+                }
+            }
+        }
     }
     
     @IBAction func downvoteButtonTapped(_ sender: Any) {
+        guard let yak = yak else {return}
+        yak.score -= 1
+        YakController.shared.updateYak(yak: yak) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let yak):
+                    self.scoreCountLabel.text = "\(yak.score)"
+                case .failure(let error):
+                    print(error.errorDescription ?? "Whoops")
+                }
+            }
+        }
     }
     
     //MARK: - Helper Methods
@@ -32,8 +56,6 @@ class YakTableViewCell: UITableViewCell {
         guard let yak = yak else {return}
         yakTextLabel.text = "\(yak.text) \n\n\t~\(yak.author)"
         scoreCountLabel.text = String(yak.score)
-        
     }
-    
     
 } //End of class
