@@ -14,7 +14,11 @@ class YakTableViewCell: UITableViewCell {
     @IBOutlet weak var scoreCountLabel: UILabel!
     
     //MARK: - Properties
-    var yak: Yak?
+    var yak: Yak? {
+        didSet {
+            updateViews()
+        }
+    }
     
     //MARK: - Actions
     @IBAction func upvoteButtonTapped(_ sender: Any) {
@@ -24,7 +28,12 @@ class YakTableViewCell: UITableViewCell {
     }
     
     //MARK: - Helper Methods
-    
+    func updateViews() {
+        guard let yak = yak else {return}
+        yakTextLabel.text = "\(yak.text) \n\n\t~\(yak.author)"
+        scoreCountLabel.text = String(yak.score)
+        
+    }
     
     
 } //End of class

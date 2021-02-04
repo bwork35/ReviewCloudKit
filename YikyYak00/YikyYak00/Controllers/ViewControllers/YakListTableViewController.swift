@@ -27,13 +27,13 @@ class YakListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return YakController.shared.yaks.count
+        return YakController.shared.yakys.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "yakCell", for: indexPath) as? YakTableViewCell else {return UITableViewCell()}
         
-        let yak = YakController.shared.yaks[indexPath.row]
+        let yak = YakController.shared.yakys[indexPath.row]
         cell.yak = yak
 
         return cell
