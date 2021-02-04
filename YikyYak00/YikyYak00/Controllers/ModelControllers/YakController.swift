@@ -11,14 +11,38 @@ class YakController {
     
     static let shared = YakController()
     
-    var yakys: [Yak] {
+    var yakys: [Yak] = {
         let yak1 = Yak(text: "To be or not to be", author: "Hamlet", score: 5)
         let yak2 = Yak(text: "Life's and bitch and then you die.", author: "Anon.", score: 3)
         let yak3 = Yak(text: "I really loved this week :)", author: "no one ever", score: 0)
         let yak4 = Yak(text: "This is the worst thing I've ever seen", author: "Max", score: 500)
 
         return [yak1, yak2, yak3, yak4]
+    }()
+    
+    
+    //FAUX FUNCTIONS
+    func createYak(with text: String, author: String, completion: @escaping (Result<String, YakError>) -> Void) {
+        let newYak = Yak(text: text, author: author)
+        self.yakys.append(newYak)
+        completion(.success("Successfully yikked a Yak."))
     }
+    
+    func fetchAllYaks(completion: @escaping (Result<String, YakError>) -> Void) {
+        print("Fetcheth me thy Yaks!")
+        completion(.success("Successfully fetched all Yaks."))
+    }
+    
+    func updateYak(yak: Yak, completion: @escaping (Result<Yak, YakError>) -> Void) {
+        let thatYak = yak
+        completion(.success(thatYak))
+    }
+    
+    func deleteYak(yak: Yak, completion: @escaping (Result<String, YakError>) -> Void) {
+        completion(.success("Successfully yeeted the Yak."))
+    }
+    
+    
     
    /* var yaks: [Yak] = []
     
