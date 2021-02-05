@@ -17,6 +17,8 @@
 		93872A5625C6839E0080ECC2 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872A5525C6839E0080ECC2 /* Entry.swift */; };
 		93872A5925C683B70080ECC2 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872A5825C683B70080ECC2 /* EntryController.swift */; };
 		93872A5F25C750840080ECC2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93872A5E25C750840080ECC2 /* CloudKit.framework */; };
+		93872BEB25CDB11A0080ECC2 /* JournalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872BEA25CDB11A0080ECC2 /* JournalError.swift */; };
+		93872BEE25CDC2150080ECC2 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93872BED25CDC2150080ECC2 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		93872A5825C683B70080ECC2 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		93872A5B25C7507F0080ECC2 /* JournalCK00.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JournalCK00.entitlements; sourceTree = "<group>"; };
 		93872A5E25C750840080ECC2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		93872BEA25CDB11A0080ECC2 /* JournalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalError.swift; sourceTree = "<group>"; };
+		93872BED25CDC2150080ECC2 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 		93872A4A25C682690080ECC2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				93872BEA25CDB11A0080ECC2 /* JournalError.swift */,
+				93872BED25CDC2150080ECC2 /* DateExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93872A5925C683B70080ECC2 /* EntryController.swift in Sources */,
+				93872BEE25CDC2150080ECC2 /* DateExtension.swift in Sources */,
 				93872A5625C6839E0080ECC2 /* Entry.swift in Sources */,
 				93872A3025C6821F0080ECC2 /* AppDelegate.swift in Sources */,
 				93872A3225C6821F0080ECC2 /* SceneDelegate.swift in Sources */,
 				93872A5325C683840080ECC2 /* EntryDetailViewController.swift in Sources */,
+				93872BEB25CDB11A0080ECC2 /* JournalError.swift in Sources */,
 				93872A5025C683490080ECC2 /* EntryListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

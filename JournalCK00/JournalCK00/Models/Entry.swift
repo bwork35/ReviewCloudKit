@@ -9,10 +9,10 @@ import Foundation
 import CloudKit
 
 struct EntryConstants {
-    static let titleKey = "title"
-    static let bodyKey = "body"
-    static let timestampKey = "timestamp"
     static let recordType = "Entry"
+    fileprivate static let titleKey = "title"
+    fileprivate static let bodyKey = "body"
+    fileprivate static let timestampKey = "timestamp"
 }
 
 class Entry {
@@ -20,16 +20,19 @@ class Entry {
     var title: String
     var timestamp: Date
     
-    init(body: String, title: String, timestamp: Date = Date()) {
+    let recordID: CKRecord.ID
+    
+    init(body: String, title: String, timestamp: Date = Date(), recordID: CKRecord.ID = CKRecord.ID(recordName: UUID().uuidString)) {
         self.body = body
         self.title = title
         self.timestamp = timestamp
+        self.recordID = recordID
     }
 } //End of class
 
 extension CKRecord {
     convenience init(entry: Entry) {
-        self.init(recordType: EntryConstants.recordType)
+        self.init(recordType: EntryConstants.recordType, recordID: entry.recordID)
         
         self.setValuesForKeys([
             EntryConstants.titleKey : entry.title,
@@ -45,6 +48,12 @@ extension Entry {
               let body = ckRecord[EntryConstants.bodyKey] as? String,
               let timestamp = ckRecord[EntryConstants.timestampKey] as? Date else {return nil}
         
-        self.init(body: body, title: title, timestamp: timestamp)
+        self.init(body: body, title: title, timestamp: timestamp, recordID: ckRecord.recordID)
     }
 } //End of extension
+
+extension Entry: Equatable {
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.recordID == rhs.recordID
+    }
+}
