@@ -11,6 +11,14 @@ class YakController {
     
     static let shared = YakController()
     
+    
+    
+    /*
+     APP NOT CONNECTED TO CLOUDKIT IN SIGNING & CAPABILITIES
+     --------------------------------------------------------
+     MOCK DATA BELOW
+     
+     
     var yakys: [Yak] = {
         let yak1 = Yak(text: "To be or not to be", author: "Hamlet", score: 5)
         let yak2 = Yak(text: "Life's and bitch and then you die.", author: "Anon.", score: 3)
@@ -20,31 +28,9 @@ class YakController {
         return [yak1, yak2, yak3, yak4]
     }()
     
+    */
     
-    //FAUX FUNCTIONS
-    func createYak(with text: String, author: String, completion: @escaping (Result<String, YakError>) -> Void) {
-        let newYak = Yak(text: text, author: author)
-        self.yakys.append(newYak)
-        completion(.success("Successfully yikked a Yak."))
-    }
-    
-    func fetchAllYaks(completion: @escaping (Result<String, YakError>) -> Void) {
-        print("Fetcheth me thy Yaks!")
-        completion(.success("Successfully fetched all Yaks."))
-    }
-    
-    func updateYak(yak: Yak, completion: @escaping (Result<Yak, YakError>) -> Void) {
-        let thatYak = yak
-        completion(.success(thatYak))
-    }
-    
-    func deleteYak(yak: Yak, completion: @escaping (Result<String, YakError>) -> Void) {
-        completion(.success("Successfully yeeted the Yak."))
-    }
-    
-    
-    
-   /* var yaks: [Yak] = []
+    var yaks: [Yak] = []
     
     let publicDB = CKContainer.default().publicCloudDatabase
     
@@ -90,7 +76,9 @@ class YakController {
             
             guard let records = records else {return completion(.failure(.couldNotUnwrap))}
             let fetchedYaks = records.compactMap({ Yak(ckRecord: $0) })
-            self.yaks = fetchedYaks
+            
+            let sortedYaks = fetchedYaks.sorted(by: { $0.score > $1.score })
+            self.yaks = sortedYaks
             
             return completion(.success("Successfully fetched all Yaks!"))
         }
@@ -144,8 +132,5 @@ class YakController {
         }
         publicDB.add(operation)
     }
- 
- 
- */
     
 } //End of class

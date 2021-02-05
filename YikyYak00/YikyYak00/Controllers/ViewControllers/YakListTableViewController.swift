@@ -75,13 +75,13 @@ class YakListTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return YakController.shared.yakys.count
+        YakController.shared.yaks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "yakCell", for: indexPath) as? YakTableViewCell else {return UITableViewCell()}
         
-        let yak = YakController.shared.yakys[indexPath.row]
+        let yak = YakController.shared.yaks[indexPath.row]
         cell.yak = yak
 
         return cell
@@ -90,15 +90,15 @@ class YakListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let yakToDelete = YakController.shared.yakys[indexPath.row]
-            guard let index = YakController.shared.yakys.firstIndex(of: yakToDelete) else {return}
+            let yakToDelete = YakController.shared.yaks[indexPath.row]
+            guard let index = YakController.shared.yaks.firstIndex(of: yakToDelete) else {return}
             
             YakController.shared.deleteYak(yak: yakToDelete) { (result) in
                 DispatchQueue.main.async {
                     switch result {
                     case .success(let response):
                         print(response)
-                        YakController.shared.yakys.remove(at: index)
+                        YakController.shared.yaks.remove(at: index)
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     case .failure(let error):
                         print(error.errorDescription ?? "ouch!!")
