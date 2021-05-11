@@ -20,6 +20,9 @@ class EntryDetailViewController: UIViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        
         setupViews()
         if let entry = entry {
             updateViews(with: entry)

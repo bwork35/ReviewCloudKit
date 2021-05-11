@@ -8,6 +8,8 @@
 import CloudKit
 import UIKit
 
+//Posts Comment ?
+
 struct PostStrings {
     static let typeKey = "Post"
     static let captionKey = "caption"
