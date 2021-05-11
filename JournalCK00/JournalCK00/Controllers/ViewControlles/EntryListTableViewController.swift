@@ -12,6 +12,7 @@ class EntryListTableViewController: UITableViewController {
     //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         fetchEntries()
     }
     
