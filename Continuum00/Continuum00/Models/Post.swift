@@ -65,4 +65,8 @@ extension Post {
     }
 } //End of extension
 
-
+extension Post: Equatable {
+    static func == (lhs: Post, rhs: Post) -> Bool {
+        return lhs.recordID == rhs.recordID
+    }
+} //End of extension
